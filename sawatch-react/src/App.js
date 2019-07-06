@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import 'font-awesome/css/font-awesome.min.css'
 import './App.css';
 import DataRow from "./components/DataRow"
+// import HeaderButton from './components/HeaderButton';
 const apiUrl = "https://api.sawatchlabs.com/models/13/2017"
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      attributes: ["vehicle_year",  "make", "vehicle_model", "displacement", "cylinders", "class"],
       sawatchData: [],
       currentSort: ""
     }
@@ -83,6 +83,7 @@ class App extends Component {
                     <i className="fa fa-caret-down"></i>
                   </button>
                 </th>
+                {/* <HeaderButton attribute={"vehicle_model"} /> */}
               </tr>
             </thead>
             <tbody id="swt-table">
