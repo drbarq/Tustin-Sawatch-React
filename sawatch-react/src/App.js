@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'font-awesome/css/font-awesome.min.css'
 import './App.css';
 import DataRow from "./components/DataRow"
-// import HeaderButton from './components/HeaderButton';
+import HeaderLabel from './components/HeaderLabel';
 const apiUrl = "https://api.sawatchlabs.com/models/13/2017"
 
 class App extends Component {
@@ -24,7 +24,6 @@ class App extends Component {
 
   sortedSawatchData = () => {
     return this.state.sawatchData.sort((a, b) => {
-      // debugger
       if(!this.state.currentSort) {
         return 0
       } else {
@@ -53,37 +52,7 @@ class App extends Component {
           <table className="swt-table">
             <thead>
               <tr>
-                <th>Year
-                  <button className={this.state.currentSort === "vehicle_year" ? "active-sort" : undefined} onClick={() => this.updateCurrentSort("vehicle_year")}>
-                    <i className="fa fa-caret-down"></i>
-                  </button>
-                </th>
-                <th>Make
-                  <button className={this.state.currentSort === "make" ? "active-sort" : undefined} onClick={() => this.updateCurrentSort("make")}>
-                    <i className="fa fa-caret-down"></i>
-                  </button>
-                </th>
-                <th>Model
-                  <button className={this.state.currentSort === "vehicle_model" ? "active-sort" : undefined} onClick={() => this.updateCurrentSort("vehicle_model")}>
-                    <i className="fa fa-caret-down"></i>
-                  </button>
-                </th>
-                <th>Displacement
-                  <button className={this.state.currentSort === "displacement" ? "active-sort" : undefined} onClick={() => this.updateCurrentSort("displacement")}>
-                    <i className="fa fa-caret-down"></i>
-                  </button>
-                </th>
-                <th>Cylinders
-                  <button className={this.state.currentSort === "cylinders" ? "active-sort" : undefined} onClick={() => this.updateCurrentSort("cylinders")}>
-                    <i className="fa fa-caret-down"></i>
-                  </button>
-                </th>
-                <th>Class
-                  <button className={this.state.currentSort === "class" ? "active-sort" : undefined} onClick={() => this.updateCurrentSort("class")}>
-                    <i className="fa fa-caret-down"></i>
-                  </button>
-                </th>
-                {/* <HeaderButton attribute={"vehicle_model"} /> */}
+                <HeaderLabel currentSort={this.state.currentSort} updateCurrentSort={this.updateCurrentSort}/>
               </tr>
             </thead>
             <tbody id="swt-table">
