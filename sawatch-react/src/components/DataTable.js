@@ -22,19 +22,11 @@ export default class DataTable extends Component {
     }
     
     dataAscendDescend = () => {
-        if (this.state.sortDirection === 0) {
-            return this.sortedSawatchData() 
-        } else {
-            return this.sortedSawatchData().reverse()
-        }
+        return (this.state.sortDirection === 0) ? this.sortedSawatchData() : this.sortedSawatchData().reverse()
     }
 
     reverseSortDirection = () => {
-        if (this.state.sortDirection === 0) {
-            return this.setState({sortDirection: 1})
-        } else {
-            return this.setState({sortDirection: 0})
-        }
+        return (this.state.sortDirection === 0) ? this.setState({sortDirection: 1}) : this.setState({sortDirection: 0})
     }
 
     sortedSawatchData = () => {
@@ -42,7 +34,7 @@ export default class DataTable extends Component {
             if(!this.state.currentSort) {
                 return 0
             } else {
-                return a[this.state.currentSort] > b[this.state.currentSort]
+                return a[this.state.currentSort] > b[this.state.currentSort] 
                 ? 1
                 : -1 
             } 
