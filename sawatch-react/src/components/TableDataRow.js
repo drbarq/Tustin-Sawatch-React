@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function DataRow(props) {
+export default function TableDataRow(props) {
     return(
         props.sortedData().map(carInfo => {
             return (

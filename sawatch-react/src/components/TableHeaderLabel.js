@@ -1,7 +1,6 @@
 import React from 'react'
-// import HeaderButton  from "./HeaderButton"
 
-export default function HeaderLabel(props) {
+export default function TableHeaderLabel(props) {
     const labelsAndNames = [
         {   
             label: "Year",
@@ -31,13 +30,12 @@ export default function HeaderLabel(props) {
     return(
         labelsAndNames.map((item, index) => {
             return(
-                <th key={index}>{item.label} 
+                <th key={index}> {item.label}
                     <button className={props.currentSort === `${item.name}` ? "active-sort" : undefined} onClick={() => props.updateCurrentSort(`${item.name}`)}>
                         <i className="fa fa-caret-down"></i>
                     </button>
                 </th>
             )
         })
-
     )
 }
