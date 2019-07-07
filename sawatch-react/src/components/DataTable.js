@@ -17,10 +17,10 @@ export default class DataTable extends Component {
         fetch(apiUrl)
         .then(response => response.json())
         .then(data => data.data)
-        .then(sawatchData => {this.setState({sawatchData})})
+        .then(sawatchData => this.setState({sawatchData}))
         .catch(error => console.error(error))
     }
-    
+
     dataAscendDescend = () => {
         return (this.state.sortDirection === 0) ? this.sortedSawatchData() : this.sortedSawatchData().reverse()
     }
