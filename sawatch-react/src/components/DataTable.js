@@ -8,7 +8,8 @@ export default class DataTable extends Component {
         super()
         this.state = {
             sawatchData: [],
-            currentSort: ""
+            currentSort: "",
+            sortDirection: 0,
         }
     }
     
@@ -18,6 +19,22 @@ export default class DataTable extends Component {
         .then(data => data.data)
         .then(sawatchData => {this.setState({sawatchData})})
         .catch(error => console.error(error))
+    }
+    
+    dataAscendDescend = () => {
+        if (this.state.sortDirection === 0) {
+            return this.sortedSawatchData() 
+        } else {
+            return this.sortedSawatchData().reverse()
+        }
+    }
+
+    reverseSortDirection = () => {
+        if (this.state.sortDirection === 0) {
+            return this.setState({sortDirection: 1})
+        } else {
+            return this.setState({sortDirection: 0})
+        }
     }
 
     sortedSawatchData = () => {
@@ -36,6 +53,7 @@ export default class DataTable extends Component {
         this.setState({
             currentSort: sortTerm
         })
+        this.reverseSortDirection()
     }
 
     render() {
@@ -44,11 +62,11 @@ export default class DataTable extends Component {
                 <table className="swt-table">
                     <thead>
                         <tr>
-                            <TableHeaderLabel currentSort={this.state.currentSort} updateCurrentSort={this.updateCurrentSort}/>
+                            <TableHeaderLabel currentSort={this.state.currentSort} updateCurrentSort={this.updateCurrentSort} />
                         </tr>
                     </thead>
                     <tbody id="swt-table">
-                        <TableDataRow sortedData={this.sortedSawatchData}/>
+                        <TableDataRow sortedData={this.dataAscendDescend}/>
                     </tbody>
                 </table>
             </div>
