@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function TableDataRow(props) {
     return(
-        props.sortedData().map(carInfo => {
+        props.sortedCarData().map(carInfo => {
             return (
                 <tr key={carInfo.id}>
                     <td>{carInfo.vehicle_year}</td>

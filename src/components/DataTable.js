@@ -7,7 +7,7 @@ export default class DataTable extends Component {
     constructor() {
         super()
         this.state = {
-            sawatchData: [],
+            carData: [],
             currentSort: "",
             sortDirection: 0,
         }
@@ -15,23 +15,27 @@ export default class DataTable extends Component {
     
     componentDidMount() {
         fetch(apiUrl)
-        .then(response => response.json())
-        .then(data => data.data)
-        .then(sawatchData => this.setState({sawatchData}))
-        .catch(error => console.error(error))
+            .then(response => response.json())
+            .then(data => data.data)
+            .then(carData => this.setState({carData}))
+            .catch(error => console.error(error))
     }
 
     dataAscendDescend = () => {
-        return (this.state.sortDirection === 0) ? this.sortedSawatchData() : this.sortedSawatchData().reverse()
+        return this.state.sortDirection === 0 
+            ? this.sortedCarData() 
+            : this.sortedCarData().reverse()
     }
 
     reverseSortDirection = () => {
-        return (this.state.sortDirection === 0) ? this.setState({sortDirection: 1}) : this.setState({sortDirection: 0})
+        return this.state.sortDirection === 0 
+            ? this.setState({sortDirection: 1}) 
+            : this.setState({sortDirection: 0})
     }
 
-    sortedSawatchData = () => {
-        return this.state.sawatchData.sort((a, b) => {
-            if(!this.state.currentSort) {
+    sortedCarData = () => {
+        return this.state.carData.sort((a, b) => {
+            if (!this.state.currentSort) {
                 return 0
             } else {
                 return a[this.state.currentSort] > b[this.state.currentSort] 
@@ -54,11 +58,14 @@ export default class DataTable extends Component {
                 <table className="swt-table">
                     <thead>
                         <tr>
-                            <TableHeaderLabel currentSort={this.state.currentSort} updateCurrentSort={this.updateCurrentSort} />
+                            <TableHeaderLabel 
+                                currentSort={this.state.currentSort} 
+                                updateCurrentSort={this.updateCurrentSort} 
+                            />
                         </tr>
                     </thead>
                     <tbody id="swt-table">
-                        <TableDataRow sortedData={this.dataAscendDescend}/>
+                        <TableDataRow sortedCarData={this.dataAscendDescend}/>
                     </tbody>
                 </table>
             </div>

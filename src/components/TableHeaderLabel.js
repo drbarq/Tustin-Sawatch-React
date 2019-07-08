@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function TableHeaderLabel(props) {
-    const labelsAndNames = [
+    const carAttributes = [
         {   
             label: "Year",
             name: "vehicle_year"
@@ -28,10 +28,11 @@ export default function TableHeaderLabel(props) {
         },
     ]
     return(
-        labelsAndNames.map((item, index) => {
+        carAttributes.map((item, index) => {
             return(
                 <th key={index}> {item.label}
-                    <button className={props.currentSort === `${item.name}` ? "active-sort" : undefined} onClick={() => props.updateCurrentSort(`${item.name}`)}>
+                    <button className={props.currentSort === `${item.name}` ? "active-sort" : undefined} 
+                            onClick={() => props.updateCurrentSort(`${item.name}`)} >
                         <i className="fa fa-caret-down"></i>
                     </button>
                 </th>
