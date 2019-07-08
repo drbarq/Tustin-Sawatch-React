@@ -6,9 +6,7 @@ descending order.
 
 ## Usage 
 
-![alt text](https://media.giphy.com/media/QWimmlNhuerYHlDu6I/giphy.gif)
-
-![alt text](https://media.giphy.com/media/hWMT7Bq79Y1yByP2rH/giphy.gif)
+![alt text](https://media.giphy.com/media/jTBjCywV7uyxKV8Qpj/giphy.gif)
 
 ## Installation
 
