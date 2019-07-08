@@ -1,4 +1,4 @@
-## Sawatch Labs: Tustin Front End Technical Challenge
+## Sawatch Labs: Tustin - Front End Technical Challenge: React
 
 Using React I wrote a series of components which displays the fetched api information.  By leveraging state I created the
 ability to sort the data by column header.  Clicking the caret-down button toggles the sort direction between ascending and 
