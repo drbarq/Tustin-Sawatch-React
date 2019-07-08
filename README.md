@@ -4,7 +4,13 @@ Using React I wrote a series of components which displays the fetched api inform
 ability to sort the data by column header.  Clicking the caret-down button toggles the sort direction between ascending and 
 descending order. 
 
-## How to Start the Application
+## Usage 
+
+![alt text](http://www.giphy.com/gifs/QWimmlNhuerYHlDu6I)
+
+![alt text](http://www.giphy.com/gifs/hWMT7Bq79Y1yByP2rH)
+
+## Installation
 
 1) Fork and clone this repository
 
